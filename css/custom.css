@@ -318,9 +318,9 @@ body{
 
 .loading-container,
 .loading{
-	height: 100px;
+	height: 150px;
 	position: relative;
-	width: 100px;
+	width: 150px;
 	border-radius: 100%;
 }
 
@@ -329,7 +329,7 @@ body{
 }
 
 .loading{
-	border: 1px solid transparent;
+	border: 2px solid transparent;
 	border-color: transparent var(--secondary-color) transparent var(--secondary-color);
 	animation: rotate-loading 1.5s linear 0s infinite normal;
 	transform-origin: 50% 50%;
