@@ -2070,24 +2070,24 @@ body:has(.offcanvas){
 }
 
 /* All circle images */
-.offer-circle-image-1,
+/* .offer-circle-image-1,
 .offer-circle-image-2,
 .offer-circle-image-3,
 .offer-circle-image-4,
 .offer-circle-image-5 {
     position: absolute;
-    width: 165px;       /* keep original size */
+    width: 165px;      
     height: 165px;
     border: 8px solid var(--primary-color);
     border-radius: 50%;
     overflow: hidden;
-    top: 40%;    /* moved much higher */
-    left: 35%;   /* keep same left position */
-    transform: translate(-50%, -50%); /* center relative to its own point */
-}
+    top: 40%;    
+    left: 35%;   
+    transform: translate(-50%, -50%);
+} */
 
 /* Arrange in circle using angles */
-.offer-circle-image-1 { transform: rotate(0deg) translate(220px) rotate(0deg); }
+/* .offer-circle-image-1 { transform: rotate(0deg) translate(220px) rotate(0deg); }
 .offer-circle-image-2 { transform: rotate(72deg) translate(220px) rotate(-72deg); }
 .offer-circle-image-3 { transform: rotate(144deg) translate(220px) rotate(-144deg); }
 .offer-circle-image-4 { transform: rotate(216deg) translate(220px) rotate(-216deg); }
@@ -2102,7 +2102,7 @@ body:has(.offcanvas){
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-}
+} */
 
 
 /************************************/
