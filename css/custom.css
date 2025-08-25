@@ -1697,7 +1697,7 @@ body:has(.offcanvas){
 
 .pricing-image img{
 	width: 100%;
-	aspect-ratio: 1 / 1.296;
+	aspect-ratio: 1 / 1.237;
 	object-fit: cover;
 	border-radius: 400px 400px 0 0;
 }
@@ -2032,7 +2032,10 @@ body:has(.offcanvas){
 }
 
 .offer-circle-image-1,
-.offer-circle-image-2{
+.offer-circle-image-2,
+.offer-circle-image-3,
+.offer-circle-image-4,
+.offer-circle-image-5{
 	position: absolute;
 	border: 8px solid var(--primary-color);
 	border-radius: 50%;
@@ -2049,18 +2052,58 @@ body:has(.offcanvas){
 	bottom: 80px;
 }
 
-.offer-circle-image-1 figure,
-.offer-circle-image-2 figure{
-	display: block;
-	border-radius: 50%;
+/* New images positioning */
+.offer-circle-image-3{
+	top: 50px;
+	left: 100px;
 }
 
-.offer-circle-image-1 img,
-.offer-circle-image-2 img{
-	width: 100%;
-	max-width: 165px;
-	object-fit: cover;
+.offer-circle-image-4{
+	bottom: 100px;
+	right: 120px;
 }
+
+.offer-circle-image-5{
+	top: 200px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+/* All circle images */
+.offer-circle-image-1,
+.offer-circle-image-2,
+.offer-circle-image-3,
+.offer-circle-image-4,
+.offer-circle-image-5 {
+    position: absolute;
+    width: 165px;       /* keep original size */
+    height: 165px;
+    border: 8px solid var(--primary-color);
+    border-radius: 50%;
+    overflow: hidden;
+    top: 40%;    /* moved much higher */
+    left: 35%;   /* keep same left position */
+    transform: translate(-50%, -50%); /* center relative to its own point */
+}
+
+/* Arrange in circle using angles */
+.offer-circle-image-1 { transform: rotate(0deg) translate(220px) rotate(0deg); }
+.offer-circle-image-2 { transform: rotate(72deg) translate(220px) rotate(-72deg); }
+.offer-circle-image-3 { transform: rotate(144deg) translate(220px) rotate(-144deg); }
+.offer-circle-image-4 { transform: rotate(216deg) translate(220px) rotate(-216deg); }
+.offer-circle-image-5 { transform: rotate(288deg) translate(220px) rotate(-288deg); }
+
+.offer-circle-image-1 img,
+.offer-circle-image-2 img,
+.offer-circle-image-3 img,
+.offer-circle-image-4 img,
+.offer-circle-image-5 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 
 /************************************/
 /***   12. About Restaurant css   ***/
@@ -6252,5 +6295,94 @@ body:has(.offcanvas){
 
 	.error-page-image{
         margin-bottom: 20px;
+    }
+}
+
+.product-circles {
+    position: relative; /* needed for arrows */
+}
+
+.product-scroll {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    flex-wrap: nowrap;
+    padding: 10px 5px;
+}
+.product-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.product-link {
+    flex: 0 0 auto;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    scroll-snap-align: center;
+}
+.circle-wrapper {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #f3f3f3;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    margin: 0 auto;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.circle-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.product-link:hover .circle-img {
+    transform: scale(1.1);
+}
+.product-link p {
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+}
+
+/* Scroll buttons */
+.scroll-btn {
+    display: none; /* hide by default */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
+.scroll-btn.left {
+    left: 5px;
+}
+.scroll-btn.right {
+    right: 5px;
+}
+
+/* Show arrows only on mobile */
+@media (max-width: 768px) {
+    .scroll-btn {
+        display: block;
+    }
+    .product-scroll {
+        gap: 20px;
+    }
+    .circle-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+    .product-link p {
+        font-size: 14px;
     }
 }

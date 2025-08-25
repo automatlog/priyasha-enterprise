@@ -220,8 +220,93 @@
                         </div>
                         <!-- Section Title End -->
 
+                        <!-- Product Circles Start -->
+                        <div class="product-circles text-center mt-4">
+                            <h4 class="mb-4">Our Products</h4>
+
+                            <!-- Arrow buttons -->
+                            <button class="scroll-btn left">&#10094;</button>
+                            <button class="scroll-btn right">&#10095;</button>
+
+                            <div class="product-scroll" id="productScroll">
+                                <a href="coffee.html" class="product-link">
+                                    <div class="circle-wrapper">
+                                        <img src="images/coffe.png" alt="Coffee" class="circle-img">
+                                    </div>
+                                    <p>Coffee</p>
+                                </a>
+                                <a href="medical.html" class="product-link">
+                                    <div class="circle-wrapper">
+                                        <img src="images/Medical.png" alt="Medical Supplies" class="circle-img">
+                                    </div>
+                                    <p>Medical</p>
+                                </a>
+                                <a href="ayurvedic.html" class="product-link">
+                                    <div class="circle-wrapper">
+                                        <img src="images/Ayurvedic.png" alt="Ayurvedic" class="circle-img">
+                                    </div>
+                                    <p>Ayurvedic</p>
+                                </a>
+                                <a href="handicrafts.html" class="product-link">
+                                    <div class="circle-wrapper">
+                                        <img src="images/Handicrafts.png" alt="Handicrafts" class="circle-img">
+                                    </div>
+                                    <p>Handicrafts</p>
+                                </a>
+                                <a href="jewellery.html" class="product-link">
+                                    <div class="circle-wrapper">
+                                        <img src="images/Jewellery.png" alt="Jewellery" class="circle-img">
+                                    </div>
+                                    <p>Jewellery</p>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Product Circles End -->
+
+                        <script>
+                            const scrollContainer = document.getElementById('productScroll');
+                            const leftBtn = document.querySelector('.scroll-btn.left');
+                            const rightBtn = document.querySelector('.scroll-btn.right');
+
+                            // Function to update arrow visibility
+                            function updateArrows() {
+                                const scrollLeft = scrollContainer.scrollLeft;
+                                const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+
+                                if (scrollLeft <= 0) {
+                                    leftBtn.style.display = 'none';
+                                } else {
+                                    leftBtn.style.display = 'block';
+                                }
+
+                                if (scrollLeft >= maxScrollLeft - 1) { // small adjustment for rounding
+                                    rightBtn.style.display = 'none';
+                                } else {
+                                    rightBtn.style.display = 'block';
+                                }
+                            }
+
+                            // Initial check
+                            updateArrows();
+
+                            // Scroll by buttons
+                            leftBtn.addEventListener('click', () => {
+                                scrollContainer.scrollBy({ left: -150, behavior: 'smooth' });
+                            });
+                            rightBtn.addEventListener('click', () => {
+                                scrollContainer.scrollBy({ left: 150, behavior: 'smooth' });
+                            });
+
+                            // Update arrows on scroll
+                            scrollContainer.addEventListener('scroll', updateArrows);
+
+                            // Optional: update arrows on window resize
+                            window.addEventListener('resize', updateArrows);
+                        </script>
+
+
                         <!-- Hero Button Start -->
-                        <div class="hero-btn wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="hero-btn wow fadeInUp mt-4" data-wow-delay="0.4s">
                             <a href="products.html" class="btn-default">Explore Products</a>
                             <a href="contact.html" class="btn-default btn-highlighted">Contact Us</a>
                         </div>
@@ -380,7 +465,7 @@
                     <div class="about-us-image">
                         <div class="about-us-img">
                             <figure class="image-anime">
-                                <img src="images/about-us-image.jpg" alt="">
+                                <img src="images/2.png" alt="">
                             </figure>
                         </div>
 
@@ -624,7 +709,7 @@
                     <!-- Products Image Start -->
                     <div class="pricing-image">
                         <figure class="image-anime">
-                            <img src="images/pricing-tab-image-1.jpg" alt="">
+                            <img src="images/product-priyasha.png" alt="">
                         </figure>
                     </div>
                     <!-- Products Image End -->
@@ -729,12 +814,10 @@
                         <!-- Section Title Start -->
                         <div class="section-title">
                             <h3 class="wow fadeInUp">What we offer ?</h3>
-                            <h2 class="text-anime-style-3" data-cursor="-opaque">Delivering quality products &
-                                trusted
+                            <h2 class="text-anime-style-3" data-cursor="-opaque">Delivering quality products & trusted
                                 services</h2>
                             <p class="wow fadeInUp" data-wow-delay="0.2s">
-                                At <b>Priyasha Enterprise</b>, we bring you a diverse portfolio – from refreshing
-                                coffee
+                                At <b>Priyasha Enterprise</b>, we bring you a diverse portfolio – from refreshing coffee
                                 and elegant jewellery
                                 to Ayurvedic wellness, handicrafts, and reliable medical supplies. Our mission is to
                                 combine tradition,
@@ -758,8 +841,7 @@
                                 <div id="offerscollapse1" class="accordion-collapse collapse show"
                                     aria-labelledby="offersheading1" data-bs-parent="#offer-accordion">
                                     <div class="accordion-body">
-                                        <p>Experience the aroma of freshly roasted coffee – perfect for homes,
-                                            cafés,
+                                        <p>Experience the aroma of freshly roasted coffee – perfect for homes, cafés,
                                             and gifting.</p>
                                     </div>
                                 </div>
@@ -813,8 +895,7 @@
                                 <div id="offerscollapse4" class="accordion-collapse collapse"
                                     aria-labelledby="offersheading4" data-bs-parent="#offer-accordion">
                                     <div class="accordion-body">
-                                        <p>Unique handmade products that reflect cultural artistry and add elegance
-                                            to
+                                        <p>Unique handmade products that reflect cultural artistry and add elegance to
                                             your space.</p>
                                     </div>
                                 </div>
@@ -861,347 +942,368 @@
                         </div>
                         <!-- Offer Image End -->
 
-                        <!-- Offer Circle Image 1 Start -->
+                        <!-- Circle Images Start -->
                         <div class="offer-circle-image-1">
                             <figure class="image-anime">
-                                <img src="images/offer-circle-image-1.jpg" alt="">
+                                <img src="images/coffe.png" alt="Coffee">
                             </figure>
                         </div>
-                        <!-- Offer Circle Image 1 End -->
 
-                        <!-- Offer Circle Image 2 Start -->
                         <div class="offer-circle-image-2">
                             <figure class="image-anime">
-                                <img src="images/offer-circle-image-2.jpg" alt="">
+                                <img src="images/Jewellery.png" alt="Jewellery">
                             </figure>
                         </div>
-                        <!-- Offer Circle Image 2 End -->
-                    </div>
-                    <!-- Our Offer Images End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Our Offers Section End -->
 
-
-    <!-- Our Testimonials Section Start -->
-    <div class="our-testimonials parallaxie">
-        <div class="container">
-            <div class="row section-row">
-                <div class="col-lg-12">
-                    <!-- Section Title Start -->
-                    <div class="section-title">
-                        <h3 class="wow fadeInUp">our testimonials</h3>
-                        <h2 class="text-anime-style-3" data-cursor="-opaque">Hear from those who know us best</h2>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- Testimonial Slider Start -->
-                    <div class="testimonial-slider">
-                        <div class="swiper">
-                            <div class="swiper-wrapper" data-cursor-text="Drag">
-                                <!-- Testimonial Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-content">
-                                            <p>“ From the moment I contacted them, I knew I was in good hands. The
-                                                property exceeded all my expectations, and the team's expertise made
-                                                the
-                                                entire buying experience seamless. </p>
-                                        </div>
-                                        <div class="author-info">
-                                            <p>leslie alexander, ukco - united kingdom co.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide End -->
-
-                                <!-- Testimonial Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-content">
-                                            <p>“ From the moment I contacted them, I knew I was in good hands. The
-                                                property exceeded all my expectations, and the team's expertise made
-                                                the
-                                                entire buying experience seamless. </p>
-                                        </div>
-                                        <div class="author-info">
-                                            <p>ukco - united kingdom co.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide End -->
-                            </div>
-                            <div class="testimonial-btn">
-                                <div class="testimonial-btn-prev"></div>
-                                <div class="testimonial-btn-next"></div>
-                            </div>
+                        <div class="offer-circle-image-3">
+                            <figure class="image-anime">
+                                <img src="images/Medical.png" alt="Medical">
+                            </figure>
                         </div>
+
+                        <div class="offer-circle-image-4">
+                            <figure class="image-anime">
+                                <img src="images/Ayurvedic.png" alt="Ayurvedic">
+                            </figure>
+                        </div>
+
+                        <div class="offer-circle-image-5">
+                            <figure class="image-anime">
+                                <img src="images/Handicrafts.png" alt="Handicrafts">
+                            </figure>
+                        </div>
+
                     </div>
-                    <!-- Testimonial Slider End -->
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Our Testimonials Section End -->
+        <!-- Our Offers Section End -->
 
-    <!-- Our Faqs Section Start -->
-    <div class="our-faqs">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <!-- Faqs Content Start -->
-                    <div class="faqs-content">
+        
+
+
+        <!-- Our Testimonials Section Start -->
+        <div class="our-testimonials parallaxie">
+            <div class="container">
+                <div class="row section-row">
+                    <div class="col-lg-12">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">frequently asked questions</h3>
-                            <h2 class="text-anime-style-3" data-cursor="-opaque">
-                                Common questions about our products and services
-                            </h2>
+                            <h3 class="wow fadeInUp">our testimonials</h3>
+                            <h2 class="text-anime-style-3" data-cursor="-opaque">Hear from those who know us best</h2>
                         </div>
                         <!-- Section Title End -->
-
-                        <!-- FAQ Accordion Start -->
-                        <div class="faq-accordion" id="accordion">
-
-                            <!-- FAQ Item 1 -->
-                            <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
-                                <h2 class="accordion-header" id="heading1">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                        Do you offer both original and imitation jewellery?
-                                    </button>
-                                </h2>
-                                <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1"
-                                    data-bs-parent="#accordion">
-                                    <div class="accordion-body">
-                                        <p>Yes, we provide a wide range of both elegant original pieces and
-                                            affordable
-                                            imitation jewellery, ensuring style for every occasion.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- FAQ Item 2 -->
-                            <div class="accordion-item wow fadeInUp" data-wow-delay="0.3s">
-                                <h2 class="accordion-header" id="heading2">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                        Are your Ayurvedic products safe and authentic?
-                                    </button>
-                                </h2>
-                                <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
-                                    data-bs-parent="#accordion">
-                                    <div class="accordion-body">
-                                        <p>All our Ayurvedic products are made with natural ingredients, sourced
-                                            from
-                                            trusted suppliers, and follow traditional formulations for safe and
-                                            effective use.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- FAQ Item 3 -->
-                            <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
-                                <h2 class="accordion-header" id="heading3">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                        Do you supply medical items like gloves and masks in bulk?
-                                    </button>
-                                </h2>
-                                <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
-                                    data-bs-parent="#accordion">
-                                    <div class="accordion-body">
-                                        <p>Yes, we specialize in supplying medical essentials such as surgical
-                                            gloves,
-                                            masks, and instruments in both retail and bulk quantities.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- FAQ Item 4 -->
-                            <div class="accordion-item wow fadeInUp" data-wow-delay="0.5s">
-                                <h2 class="accordion-header" id="heading4">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                        Do you offer handcrafted items for gifting and décor?
-                                    </button>
-                                </h2>
-                                <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
-                                    data-bs-parent="#accordion">
-                                    <div class="accordion-body">
-                                        <p>Absolutely! Our handicrafts are ideal for home décor and gifting,
-                                            showcasing
-                                            traditional artistry blended with modern appeal.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- FAQ Item 5 -->
-                            <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
-                                <h2 class="accordion-header" id="heading5">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                                        Do you sell coffee products as well?
-                                    </button>
-                                </h2>
-                                <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
-                                    data-bs-parent="#accordion">
-                                    <div class="accordion-body">
-                                        <p>Yes, we offer premium coffee blends with rich aroma and flavor, perfect
-                                            for
-                                            both personal enjoyment and business supply.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- FAQ Accordion End -->
                     </div>
-                    <!-- Faqs Content End -->
                 </div>
 
-                <div class="col-lg-6">
-                    <!-- Faqs Image Start -->
-                    <div class="faqs-image">
-                        <figure class="image-anime">
-                            <img src="images/faq-image.jpg" alt="">
-                        </figure>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Testimonial Slider Start -->
+                        <div class="testimonial-slider">
+                            <div class="swiper">
+                                <div class="swiper-wrapper" data-cursor-text="Drag">
+                                    <!-- Testimonial Slide Start -->
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="testimonial-content">
+                                                <p>“ From the moment I contacted them, I knew I was in good hands. The
+                                                    property exceeded all my expectations, and the team's expertise made
+                                                    the
+                                                    entire buying experience seamless. </p>
+                                            </div>
+                                            <div class="author-info">
+                                                <p>leslie alexander, ukco - united kingdom co.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Testimonial Slide End -->
+
+                                    <!-- Testimonial Slide Start -->
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="testimonial-content">
+                                                <p>“ From the moment I contacted them, I knew I was in good hands. The
+                                                    property exceeded all my expectations, and the team's expertise made
+                                                    the
+                                                    entire buying experience seamless. </p>
+                                            </div>
+                                            <div class="author-info">
+                                                <p>ukco - united kingdom co.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Testimonial Slide End -->
+                                </div>
+                                <div class="testimonial-btn">
+                                    <div class="testimonial-btn-prev"></div>
+                                    <div class="testimonial-btn-next"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial Slider End -->
                     </div>
-                    <!-- Faqs Image End -->
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Our Faqs Section End -->
+        <!-- Our Testimonials Section End -->
 
-    <!-- Main Footer Section Start -->
-    <footer class="main-footer parallaxie">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- Footer Contact List Start -->
-                    <div class="footer-contact-list">
-                        <!-- Footer Contact Item Start -->
-                        <div class="footer-contact-item">
-                            <div class="icon-box">
-                                <img src="images/icon-phone-accent.svg" alt="">
+        <!-- Our Faqs Section Start -->
+        <div class="our-faqs">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <!-- Faqs Content Start -->
+                        <div class="faqs-content">
+                            <!-- Section Title Start -->
+                            <div class="section-title">
+                                <h3 class="wow fadeInUp">frequently asked questions</h3>
+                                <h2 class="text-anime-style-3" data-cursor="-opaque">
+                                    Common questions about our products and services
+                                </h2>
                             </div>
-                            <div class="footer-contact-detail">
-                                <h3>contact us</h3>
-                                <p>T. <a href="tel:+123456789">+123 456 789</a></p>
-                                <p>M. <a href="mainto:info@domainname.com">info@domainname.com</a></p>
-                            </div>
-                            <div class="footer-contact-button">
-                                <a href="contact.html" class="btn-default btn-highlighted">contact us</a>
-                            </div>
-                        </div>
-                        <!-- Footer Contact Item End -->
+                            <!-- Section Title End -->
 
-                        <!-- Footer Contact Item Start -->
-                        <div class="footer-contact-item">
-                            <div class="icon-box">
-                                <img src="images/icon-location-accent.svg" alt="">
-                            </div>
-                            <div class="footer-contact-detail">
-                                <h3>address</h3>
-                                <p>29721 Westheimer Road, Santa Ana, Illinois 85486</p>
-                            </div>
-                            <div class="footer-contact-button">
-                                <a href="contact.html" class="btn-default btn-highlighted">get direction</a>
-                            </div>
-                        </div>
-                        <!-- Footer Contact Item End -->
+                            <!-- FAQ Accordion Start -->
+                            <div class="faq-accordion" id="accordion">
 
-                        <!-- Footer Contact Item Start -->
-                        <div class="footer-contact-item">
-                            <div class="icon-box">
-                                <img src="images/icon-clock-accent.svg" alt="">
+                                <!-- FAQ Item 1 -->
+                                <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
+                                    <h2 class="accordion-header" id="heading1">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                            Do you offer both original and imitation jewellery?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse1" class="accordion-collapse collapse show"
+                                        aria-labelledby="heading1" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>Yes, we provide a wide range of both elegant original pieces and
+                                                affordable
+                                                imitation jewellery, ensuring style for every occasion.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 2 -->
+                                <div class="accordion-item wow fadeInUp" data-wow-delay="0.3s">
+                                    <h2 class="accordion-header" id="heading2">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false"
+                                            aria-controls="collapse2">
+                                            Are your Ayurvedic products safe and authentic?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
+                                        data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>All our Ayurvedic products are made with natural ingredients, sourced
+                                                from
+                                                trusted suppliers, and follow traditional formulations for safe and
+                                                effective use.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 3 -->
+                                <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
+                                    <h2 class="accordion-header" id="heading3">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false"
+                                            aria-controls="collapse3">
+                                            Do you supply medical items like gloves and masks in bulk?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
+                                        data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>Yes, we specialize in supplying medical essentials such as surgical
+                                                gloves,
+                                                masks, and instruments in both retail and bulk quantities.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 4 -->
+                                <div class="accordion-item wow fadeInUp" data-wow-delay="0.5s">
+                                    <h2 class="accordion-header" id="heading4">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false"
+                                            aria-controls="collapse4">
+                                            Do you offer handcrafted items for gifting and décor?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                                        data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>Absolutely! Our handicrafts are ideal for home décor and gifting,
+                                                showcasing
+                                                traditional artistry blended with modern appeal.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 5 -->
+                                <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
+                                    <h2 class="accordion-header" id="heading5">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false"
+                                            aria-controls="collapse5">
+                                            Do you sell coffee products as well?
+                                        </button>
+                                    </h2>
+                                    <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
+                                        data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>Yes, we offer premium coffee blends with rich aroma and flavor, perfect
+                                                for
+                                                both personal enjoyment and business supply.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
-                            <div class="footer-contact-detail">
-                                <h3>opening hours</h3>
-                                <p>Everyday: From 12.30 To 23.00</p>
-                                <p>Kitchen Closes At 22.00</p>
-                            </div>
-                            <div class="footer-contact-button">
-                                <a href="book-table.html" class="btn-default btn-highlighted">reserve a table</a>
-                            </div>
+                            <!-- FAQ Accordion End -->
                         </div>
-                        <!-- Footer Contact Item End -->
+                        <!-- Faqs Content End -->
                     </div>
-                    <!-- Footer Contact List End -->
-                </div>
 
-                <div class="col-lg-12">
-                    <!-- Footer Copyright Start -->
-                    <div class="footer-copyright">
-                        <!-- Footer Copyright Text Start -->
-                        <div class="footer-copyright-text order-md-1 order-3">
-                            <p>Copyright © 2025 All Rights Reserved.</p>
+                    <div class="col-lg-6">
+                        <!-- Faqs Image Start -->
+                        <div class="faqs-image">
+                            <figure class="image-anime">
+                                <img src="images/faq-image.jpg" alt="">
+                            </figure>
                         </div>
-                        <!-- Footer Copyright Text End -->
-
-                        <!-- Footer Logo Start -->
-                        <div class="footer-logo order-md-2 order-1">
-                            <img src="images/footer-logo.svg" alt="">
-                        </div>
-                        <!-- Footer Logo End -->
-
-                        <!-- Footer Social Links Start -->
-                        <div class="footer-social-links order-md-3 order-2">
-                            <ul>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-dribbble"></i></a></li>
-                            </ul>
-                        </div>
-                        <!-- Footer Social Links End -->
+                        <!-- Faqs Image End -->
                     </div>
-                    <!-- Footer Copyright End -->
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- Main Footer Section End -->
+        <!-- Our Faqs Section End -->
 
-    <!-- Jquery Library File -->
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <!-- Bootstrap js file -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Validator js file -->
-    <script src="js/validator.min.js"></script>
-    <!-- SlickNav js file -->
-    <script src="js/jquery.slicknav.js"></script>
-    <!-- Swiper js file -->
-    <script src="js/swiper-bundle.min.js"></script>
-    <!-- Counter js file -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <!-- Isotop js file -->
-    <script src="js/isotope.min.js"></script>
-    <!-- Magnific js file -->
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <!-- SmoothScroll -->
-    <script src="js/SmoothScroll.js"></script>
-    <!-- Parallax js -->
-    <script src="js/parallaxie.js"></script>
-    <!-- MagicCursor js file -->
-    <script src="js/gsap.min.js"></script>
-    <script src="js/magiccursor.js"></script>
-    <!-- Text Effect js file -->
-    <script src="js/SplitText.js"></script>
-    <script src="js/ScrollTrigger.min.js"></script>
-    <!-- YTPlayer js File -->
-    <script src="js/jquery.mb.YTPlayer.min.js"></script>
-    <!-- Wow js file -->
-    <script src="js/wow.min.js"></script>
-    <!-- Main Custom js file -->
-    <script src="js/function.js"></script>
+        <!-- Main Footer Section Start -->
+        <footer class="main-footer parallaxie">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Footer Contact List Start -->
+                        <div class="footer-contact-list">
+
+                            <!-- Footer Contact Item Start -->
+                            <div class="footer-contact-item">
+                                <div class="icon-box">
+                                    <img src="images/icon-clock-accent.svg" alt="">
+                                </div>
+                                <div class="footer-contact-detail">
+                                    <h3>opening hours</h3>
+                                    <p>Everyday: From 8:30 To 22:00</p>
+                                </div>
+
+                            </div>
+                            <!-- Footer Contact Item End -->
+                            <!-- Footer Contact Item Start -->
+                            <div class="footer-contact-item">
+                                <div class="icon-box">
+                                    <img src="images/icon-phone-accent.svg" alt="">
+                                </div>
+                                <div class="footer-contact-detail">
+                                    <h3>contact us</h3>
+                                    <p>T. <a href="tel:+919913892403">+91 99138 92403</a></p>
+                                    <p>M. <a href="mailto:info@domainname.com">info@domainname.com</a></p>
+                                </div>
+                                <div class="footer-contact-button">
+                                    <a href="contact.html" class="btn-default btn-highlighted">contact us</a>
+                                </div>
+                            </div>
+                            <!-- Footer Contact Item End -->
+
+                            <!-- Footer Contact Item Start -->
+                            <div class="footer-contact-item">
+                                <div class="icon-box">
+                                    <img src="images/icon-location-accent.svg" alt="">
+                                </div>
+                                <div class="footer-contact-detail">
+                                    <h3>address</h3>
+                                    <p>Priyasha Enterprise, Soyuz Apartment, Nizampura, Vadodara - 390002</p>
+                                </div>
+                                <div class="footer-contact-button">
+                                    <a href="https://maps.app.goo.gl/9byNbp4yjKgb6nCC8"
+                                        class="btn-default btn-highlighted">get direction</a>
+                                </div>
+                            </div>
+                            <!-- Footer Contact Item End -->
+
+                            <!-- Footer Contact Item End -->
+                        </div>
+                        <!-- Footer Contact List End -->
+                    </div>
+
+                    <div class="col-lg-12">
+                        <!-- Footer Copyright Start -->
+                        <div class="footer-copyright">
+                            <!-- Footer Copyright Text Start -->
+                            <div class="footer-copyright-text order-md-1 order-3">
+                                <p>Copyright © 2025 All Rights Reserved.</p>
+                            </div>
+                            <!-- Footer Copyright Text End -->
+
+                            <!-- Footer Logo Start -->
+                            <div class="footer-logo order-md-2 order-1">
+                                <img src="images/logo.svg" alt="">
+                            </div>
+                            <!-- Footer Logo End -->
+
+                            <!-- Footer Social Links Start -->
+                            <div class="footer-social-links order-md-3 order-2">
+                                <ul>
+                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-dribbble"></i></a></li>
+                                </ul>
+                            </div>
+                            <!-- Footer Social Links End -->
+                        </div>
+                        <!-- Footer Copyright End -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Main Footer Section End -->
+
+
+        <!-- Jquery Library File -->
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <!-- Bootstrap js file -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Validator js file -->
+        <script src="js/validator.min.js"></script>
+        <!-- SlickNav js file -->
+        <script src="js/jquery.slicknav.js"></script>
+        <!-- Swiper js file -->
+        <script src="js/swiper-bundle.min.js"></script>
+        <!-- Counter js file -->
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <!-- Isotop js file -->
+        <script src="js/isotope.min.js"></script>
+        <!-- Magnific js file -->
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <!-- SmoothScroll -->
+        <script src="js/SmoothScroll.js"></script>
+        <!-- Parallax js -->
+        <script src="js/parallaxie.js"></script>
+        <!-- MagicCursor js file -->
+        <script src="js/gsap.min.js"></script>
+        <script src="js/magiccursor.js"></script>
+        <!-- Text Effect js file -->
+        <script src="js/SplitText.js"></script>
+        <script src="js/ScrollTrigger.min.js"></script>
+        <!-- YTPlayer js File -->
+        <script src="js/jquery.mb.YTPlayer.min.js"></script>
+        <!-- Wow js file -->
+        <script src="js/wow.min.js"></script>
+        <!-- Main Custom js file -->
+        <script src="js/function.js"></script>
 </body>
 
 <!-- Mirrored from html.awaikenthemes.com/roast/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 15 Aug 2025 05:06:21 GMT -->
